@@ -1,11 +1,11 @@
-FROM greycilik/cilikuserbot:buster
+FROM wiki12/wikiuserbot:buster
 
-RUN git clone -b Cilik-Userbot https://github.com/grey423/CilikUserbot /home/cilikuserbot/ \
-    && chmod 777 /home/cilikuserbot \
-    && mkdir /home/cilikuserbot/bin/
+RUN git clone -b Wiki-Userbot https://github.com/wii28/WikiUserbot /home/wikiuserbot/ \
+    && chmod 777 /home/wikiuserbot \
+    && mkdir /home/wikiuserbot/bin/
 
-COPY ./sample_config.env ./config.env* /home/cilikuserbot/
+COPY ./sample_config.env ./config.env* /home/wikiuserbot/
 
-WORKDIR /home/cilikuserbot/
+WORKDIR /home/wikiuserbot/
 
 CMD ["python3", "-m", "userbot"]
